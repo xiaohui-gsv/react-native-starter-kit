@@ -3,12 +3,12 @@ require_relative '../node_modules/@react-native-community/cli-platform-ios/nativ
 
 platform :ios, '10.0'
 
-target 'ReactNativeStarterKit' do
+target 'ServiceOnDemand' do
   config = use_native_modules!
 
   use_react_native!(:path => config["reactNativePath"])
 
-  target 'ReactNativeStarterKitTests' do
+  target 'ServiceOnDemandTests' do
     inherit! :complete
     # Pods for testing
   end
@@ -23,10 +23,10 @@ target 'ReactNativeStarterKit' do
   end
 end
 
-target 'ReactNativeStarterKit-tvOS' do
-  # Pods for ReactNativeStarterKit-tvOS
+target 'ServiceOnDemand-tvOS' do
+  # Pods for ServiceOnDemand-tvOS
 
-  target 'ReactNativeStarterKit-tvOSTests' do
+  target 'ServiceOnDemand-tvOSTests' do
     inherit! :search_paths
     # Pods for testing
   end

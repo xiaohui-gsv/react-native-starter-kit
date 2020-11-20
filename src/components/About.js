@@ -1,11 +1,22 @@
 import React from 'react';
 import {
-  Container, Content, Text, H1, H2, H3,
+  Container, Content, Text, H1, H2, H3, Header, Left, Button, Icon, Body, Title, Right,
 } from 'native-base';
 import Spacer from './UI/Spacer';
 
 const About = () => (
   <Container>
+    <Header>
+      <Left>
+        <Button transparent>
+          <Icon name="menu" />
+        </Button>
+      </Left>
+      <Body>
+        <Title>Header</Title>
+      </Body>
+      <Right />
+    </Header>
     <Content padder>
       <Spacer size={30} />
       <H1>Heading 1</H1>

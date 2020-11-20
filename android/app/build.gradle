@@ -129,7 +129,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.reactnativestarterkit"
+        applicationId "com.glbaloiler.sod"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

@@ -6,7 +6,6 @@ import Layout from '../../components/Articles/List';
 class ArticlesListContainer extends Component {
   constructor(props) {
     super();
-
     // Prioritize (web) page route over last meta value
     const page = props.page || props.meta.page;
 

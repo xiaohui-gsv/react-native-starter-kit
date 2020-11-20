@@ -1,13 +1,13 @@
 {
-  "name": "ReactNativeStarterKit",
+  "name": "ServiceOnDemand",
   "version": "0.0.1",
   "private": true,
   "scripts": {
     "android": "react-native run-android",
-    "ios": "react-native run-ios",
+    "ios": "react-native run-ios --simulator=\"iPhone 8\"",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "eslint --fix ."
   },
   "dependencies": {
     "@react-native-community/async-storage": "^1.11.0",
@@ -29,6 +29,7 @@
     "react-native-screens": "^2.9.0",
     "react-native-splash-screen": "^3.2.0",
     "react-native-vector-icons": "^7.0.0",
+    "react-navigation": "^4.4.3",
     "react-redux": "^7.2.1",
     "redux-persist": "^6.0.0"
   },
@@ -47,6 +48,9 @@
     "jest": "^25.1.0",
     "metro-react-native-babel-preset": "^0.59.0",
     "react-test-renderer": "16.13.1"
+  },
+  "resolutions": {
+    "@react-native-community/cli-debugger-ui": "4.7.0"
   },
   "jest": {
     "preset": "@testing-library/react-native",

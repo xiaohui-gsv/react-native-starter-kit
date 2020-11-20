@@ -24,7 +24,7 @@ const Index = (
           icon={() => <Icon name="planet" {...DefaultProps.icons} />}
           {...DefaultProps.navbarProps}
         >
-          <Scene key="home" component={AboutComponent} />
+          <Scene key="home" component={AboutComponent} hideNavBar />
         </Stack>
 
         <Stack
@@ -34,7 +34,7 @@ const Index = (
           {...DefaultProps.navbarProps}
         >
           <Scene key="articlesList" component={ArticlesList} />
-          <Scene key="articlesSingle" component={ArticlesSingle} />
+          <Scene key="articlesSingle" component={ArticlesSingle} hideTabBar />
         </Stack>
 
         <Stack
