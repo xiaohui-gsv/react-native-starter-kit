@@ -1,8 +1,5 @@
 import moment from 'moment';
 import Api from '../lib/api';
-import HandleErrorMessage from '../lib/format-error-messages';
-import { errorMessages, successMessages } from '../constants/messages';
-import pagination from '../lib/pagination';
 
 export default {
   namespace: 'auth',

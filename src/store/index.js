@@ -10,6 +10,7 @@ const persistPlugin = createPersistPlugin({
   key: 'root',
   storage: AsyncStorage,
   blacklist: [],
+  whitelist: ['auth'],
 });
 const loadingPlugin = createLoadingPlugin({});
 
