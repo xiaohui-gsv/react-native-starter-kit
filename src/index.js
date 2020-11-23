@@ -1,7 +1,7 @@
+import 'react-native-gesture-handler';
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
-import { Router, Stack } from 'react-native-router-flux';
 import { PersistGate } from 'redux-persist/es/integration/react';
 import SplashScreen from 'react-native-splash-screen';
 
@@ -11,6 +11,8 @@ import theme from '../native-base-theme/variables/commonColor';
 
 import Routes from './routes/index';
 import Loading from './components/UI/Loading';
+import { NavigationContainer } from '@react-navigation/native';
+import AppContainer from './components/AppContainer/AppContainer';
 
 class App extends React.Component {
   constructor() {
@@ -30,15 +32,13 @@ class App extends React.Component {
     if (loading) {
       return <Loading />;
     }
-
     return (
       <Root>
         <Provider store={store}>
           <PersistGate loading={<Loading />} persistor={persistor}>
+            {/*<StyleProvider style={getTheme(theme)}>{Routes}</StyleProvider>*/}
             <StyleProvider style={getTheme(theme)}>
-              <Router>
-                <Stack key="root">{Routes}</Stack>
-              </Router>
+              <AppContainer />
             </StyleProvider>
           </PersistGate>
         </Provider>

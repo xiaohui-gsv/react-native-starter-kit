@@ -11,10 +11,7 @@ const platform = Platform.OS;
 const platformStyle = PLATFORM.MATERIAL;
 const isIphoneX =
   platform === PLATFORM.IOS &&
-  (deviceHeight === 812 ||
-    deviceWidth === 812 ||
-    deviceHeight === 896 ||
-    deviceWidth === 896);
+  (deviceHeight === 812 || deviceWidth === 812 || deviceHeight === 896 || deviceWidth === 896);
 
 export default {
   platformStyle,
@@ -26,7 +23,6 @@ export default {
   contentStyle: '#f5f4f5',
   expandedIconStyle: '#000',
   accordionBorderColor: '#d3d3d3',
-  disableRow: '#a9a9a9',
 
   // ActionSheet
   elevation: 4,

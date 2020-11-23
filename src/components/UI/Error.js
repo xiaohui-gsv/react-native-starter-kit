@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {
-  Container, Text, H3, Button, View,
-} from 'native-base';
+import { Container, Text, H3, Button, View } from 'native-base';
 import Spacer from './Spacer';
 
 const Error = ({ title, content, tryAgain }) => (

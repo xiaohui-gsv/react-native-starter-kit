@@ -62,9 +62,7 @@ export default {
         const response = await Api.get(`/v2/posts?per_page=4&page=${page}&orderby=modified&_embed`);
         const { data, headers } = response;
 
-        return !data || data.length < 1
-          ? true
-          : dispatch.articles.replace({ data, headers, page });
+        return !data || data.length < 1 ? true : dispatch.articles.replace({ data, headers, page });
       } catch (error) {
         throw HandleErrorMessage(error);
       }
@@ -128,24 +126,29 @@ export default {
       }
 
       // Create our paginated and flat lists
-      const listPaginated = page === 1 ? { [page]: newList } : { ...state.listPaginated, [page]: newList };
-      const listFlat = Object.keys(listPaginated).map((k) => listPaginated[k]).flat() || [];
+      const listPaginated =
+        page === 1 ? { [page]: newList } : { ...state.listPaginated, [page]: newList };
+      const listFlat =
+        Object.keys(listPaginated)
+          .map((k) => listPaginated[k])
+          .flat() || [];
 
       return newList
         ? {
-          ...state,
-          listPaginated,
-          listFlat,
-          lastSync: page === 1
-            ? { [page]: moment().format() }
-            : { ...state.lastSync, [page]: moment().format() },
-          meta: {
-            page,
-            lastPage: parseInt(headers['x-wp-totalpages'], 10) || null,
-            total: parseInt(headers['x-wp-total'], 10) || null,
-          },
-          pagination: pagination(headers['x-wp-totalpages'], '/articles/'),
-        }
+            ...state,
+            listPaginated,
+            listFlat,
+            lastSync:
+              page === 1
+                ? { [page]: moment().format() }
+                : { ...state.lastSync, [page]: moment().format() },
+            meta: {
+              page,
+              lastPage: parseInt(headers['x-wp-totalpages'], 10) || null,
+              total: parseInt(headers['x-wp-total'], 10) || null,
+            },
+            pagination: pagination(headers['x-wp-totalpages'], '/articles/'),
+          }
         : initialState;
     },
 

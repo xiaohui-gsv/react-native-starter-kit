@@ -11,10 +11,7 @@ const platform = Platform.OS;
 const platformStyle = undefined;
 const isIphoneX =
   platform === PLATFORM.IOS &&
-  (deviceHeight === 812 ||
-    deviceWidth === 812 ||
-    deviceHeight === 896 ||
-    deviceWidth === 896);
+  (deviceHeight === 812 || deviceWidth === 812 || deviceHeight === 896 || deviceWidth === 896);
 
 export default {
   platformStyle,
@@ -28,7 +25,6 @@ export default {
   expandedIconStyle: '#000',
   headerStyle: '#edebed',
   iconStyle: '#000',
-  disableRow: '#a9a9a9',
 
   // ActionSheet
   elevation: 4,
@@ -93,9 +89,7 @@ export default {
     return this.inverseTextColor;
   },
   get buttonTextSize() {
-    return platform === PLATFORM.IOS
-      ? this.fontSizeBase * 1.1
-      : this.fontSizeBase - 1;
+    return platform === PLATFORM.IOS ? this.fontSizeBase * 1.1 : this.fontSizeBase - 1;
   },
   get buttonTextSizeLarge() {
     return this.fontSizeBase * 1.5;
@@ -124,9 +118,9 @@ export default {
   CheckboxBorderWidth: platform === PLATFORM.IOS ? 1 : 2,
   CheckboxPaddingLeft: platform === PLATFORM.IOS ? 4 : 2,
   CheckboxPaddingBottom: platform === PLATFORM.IOS ? 0 : 5,
-  CheckboxIconSize: platform === PLATFORM.IOS ? 19 : 16,
+  CheckboxIconSize: platform === PLATFORM.IOS ? 21 : 16,
   CheckboxIconMarginTop: platform === PLATFORM.IOS ? undefined : 1,
-  CheckboxFontSize: platform === PLATFORM.IOS ? 12 / 0.9 : 17,
+  CheckboxFontSize: platform === PLATFORM.IOS ? 23 / 0.9 : 17,
   checkboxBgColor: '#039BE5',
   checkboxSize: 20,
   checkboxTickColor: '#fff',

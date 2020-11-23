@@ -15,6 +15,7 @@ it('Errors to be in a consistent format', () => {
       email: ['The email must be a valid email address.'],
     },
   };
-  expect(formatErrors(validationError))
-    .toStrictEqual(new Error('The first name must be a valid name.The email must be a valid email address.'));
+  expect(formatErrors(validationError)).toStrictEqual(
+    new Error('The first name must be a valid name.The email must be a valid email address.'),
+  );
 });

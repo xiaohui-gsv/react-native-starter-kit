@@ -64,7 +64,8 @@ export const stripHtml = (string) => {
     ['#8211', '-'],
   ];
 
-  entities.map((item) => { // eslint-disable-line
+  entities.map((item) => {
+    // eslint-disable-line
     returnString = returnString.replace(new RegExp(`&${item[0]};`, 'g'), item[1]);
   });
 

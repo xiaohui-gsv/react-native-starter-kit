@@ -23,7 +23,7 @@ class ArticlesFormContainer extends Component {
     } catch (error) {
       this.setState({ loading: false, success: null, error: error.message });
     }
-  }
+  };
 
   /**
    * Render
@@ -41,7 +41,7 @@ class ArticlesFormContainer extends Component {
         onFormSubmit={this.onFormSubmit}
       />
     );
-  }
+  };
 }
 
 ArticlesFormContainer.propTypes = {

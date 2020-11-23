@@ -11,7 +11,9 @@ class ArticlesListContainer extends Component {
     const page = props.page || props.meta.page;
 
     this.state = {
-      error: null, loading: false, page: parseInt(page, 10) || 1,
+      error: null,
+      loading: false,
+      page: parseInt(page, 10) || 1,
     };
   }
 
@@ -19,18 +21,23 @@ class ArticlesListContainer extends Component {
 
   /**
    * If the page prop changes, update state
-  */
+   */
   componentDidUpdate = (prevProps) => {
     const { page } = this.props;
     const { page: prevPage } = prevProps;
 
     if (page !== prevPage) {
       // eslint-disable-next-line
-      this.setState({
-        error: null, loading: false, page: parseInt(page, 10) || 1,
-      }, this.fetchData);
+      this.setState(
+        {
+          error: null,
+          loading: false,
+          page: parseInt(page, 10) || 1,
+        },
+        this.fetchData,
+      );
     }
-  }
+  };
 
   /**
    * Fetch Data
@@ -56,9 +63,7 @@ class ArticlesListContainer extends Component {
    * Render
    */
   render = () => {
-    const {
-      listFlat, listPaginated, pagination, meta,
-    } = this.props;
+    const { listFlat, listPaginated, pagination, meta } = this.props;
     const { loading, error, page } = this.state;
 
     return (
