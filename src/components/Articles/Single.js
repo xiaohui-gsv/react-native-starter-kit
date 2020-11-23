@@ -1,15 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Image } from 'react-native';
-import {
-  Container, Content, Card, CardItem, Body, H3, Text,
-} from 'native-base';
+import { Container, Content, Card, CardItem, Body, H3, Text } from 'native-base';
 import { Loading, Error, Spacer } from '../UI';
 import { errorMessages } from '../../constants/messages';
 
-const ArticlesSingle = ({
-  error, loading, article, reFetch,
-}) => {
+const ArticlesSingle = ({ error, loading, article, reFetch }) => {
   if (error) {
     return <Error content={error} tryAgain={reFetch} />;
   }
@@ -29,7 +25,10 @@ const ArticlesSingle = ({
           <Image
             source={{ uri: article.image }}
             style={{
-              height: 200, width: null, flex: 1, resizeMode: 'contain',
+              height: 200,
+              width: null,
+              flex: 1,
+              resizeMode: 'contain',
             }}
           />
         )}

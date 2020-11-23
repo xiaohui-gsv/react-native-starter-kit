@@ -106,9 +106,7 @@ export default (variables /* : * */ = variable) => {
         ? variables.borderWidth
         : undefined,
     borderColor:
-      platform === PLATFORM.IOS && platformStyle !== PLATFORM.MATERIAL
-        ? '#cbcbcb'
-        : undefined,
+      platform === PLATFORM.IOS && platformStyle !== PLATFORM.MATERIAL ? '#cbcbcb' : undefined,
     height: variables.footerHeight,
     paddingBottom: variables.footerPaddingBottom,
     elevation: 3,

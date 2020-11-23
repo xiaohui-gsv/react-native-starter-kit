@@ -2,15 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Actions } from 'react-native-router-flux';
 import { FlatList, TouchableOpacity, Image } from 'react-native';
-import {
-  Container, Card, CardItem, Body, Text, Button,
-} from 'native-base';
+import { Container, Card, CardItem, Body, Text, Button } from 'native-base';
 import { Error, Spacer } from '../UI';
 import { errorMessages } from '../../constants/messages';
 
-const ArticlesList = ({
-  error, loading, listFlat, reFetch, meta,
-}) => {
+const ArticlesList = ({ error, loading, listFlat, reFetch, meta }) => {
   if (error) {
     return <Error content={error} tryAgain={reFetch} />;
   }
@@ -18,7 +14,6 @@ const ArticlesList = ({
   if (listFlat.length < 1) {
     return <Error content={errorMessages.articlesEmpty} />;
   }
-
   return (
     <Container style={{ padding: 10 }}>
       <FlatList
@@ -29,11 +24,9 @@ const ArticlesList = ({
           <Card style={{ opacity: item.placeholder ? 0.3 : 1 }}>
             <TouchableOpacity
               activeOpacity={0.8}
-              onPress={() => (
-                !item.placeholder
-                  ? Actions.articlesSingle({ id: item.id, title: item.name })
-                  : null
-              )}
+              onPress={() =>
+                !item.placeholder ? Actions.articlesSingle({ id: item.id, title: item.name }) : null
+              }
               style={{ flex: 1 }}
             >
               <CardItem cardBody>
@@ -65,19 +58,18 @@ const ArticlesList = ({
           </Card>
         )}
         keyExtractor={(item) => `${item.id}-${item.name}`}
-        ListFooterComponent={(meta && meta.page && meta.lastPage && meta.page < meta.lastPage)
-          ? () => (
-            <React.Fragment>
-              <Spacer size={20} />
-              <Button
-                block
-                bordered
-                onPress={() => reFetch({ incrementPage: true })}
-              >
-                <Text>Load More</Text>
-              </Button>
-            </React.Fragment>
-          ) : null}
+        ListFooterComponent={
+          meta && meta.page && meta.lastPage && meta.page < meta.lastPage
+            ? () => (
+                <React.Fragment>
+                  <Spacer size={20} />
+                  <Button block bordered onPress={() => reFetch({ incrementPage: true })}>
+                    <Text>Load More</Text>
+                  </Button>
+                </React.Fragment>
+              )
+            : null
+        }
       />
 
       <Spacer size={20} />
