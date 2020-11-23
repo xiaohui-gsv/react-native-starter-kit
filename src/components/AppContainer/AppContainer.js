@@ -3,12 +3,15 @@ import { NavigationContainer } from '@react-navigation/native';
 import AuthRouter from '../../routes/AuthRouter';
 import MainRouter from '../../routes/MainRouter';
 import { connect } from 'react-redux';
+import SplashScreen from 'react-native-splash-screen';
 
 class AppContainer extends React.Component {
   constructor() {
     super();
   }
-
+  componentDidMount() {
+    SplashScreen.hide();
+  }
   render() {
     return (
       <NavigationContainer>
