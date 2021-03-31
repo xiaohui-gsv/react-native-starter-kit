@@ -14,6 +14,13 @@ export default class Settings extends React.Component {
         <Text>Settings</Text>
 
         <Button onPress={() => this.props.navigation.navigate('Home')} title="Go to Home" />
+
+        <Button
+          onPress={() => {
+            this.props.navigation.navigate('HomeDetails');
+          }}
+          title="Go to Home Details"
+        />
       </View>
     );
   }
