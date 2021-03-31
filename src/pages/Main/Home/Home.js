@@ -26,6 +26,12 @@ export class Home extends Component {
           }}
           title="Go to Settings"
         />
+        <Button
+          onPress={() => {
+            this.props.navigation.navigate('HomeDetails');
+          }}
+          title="Go to Home Details"
+        />
       </View>
     );
   }

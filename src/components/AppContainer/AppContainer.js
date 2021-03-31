@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import AuthRouter from '../../routes/AuthRouter';
-import MainRouter from '../../routes/MainRouter';
+import MainStack from '../../routes/MainRouter';
 import { connect } from 'react-redux';
 import SplashScreen from 'react-native-splash-screen';
 
@@ -15,7 +15,7 @@ class AppContainer extends React.Component {
   render() {
     return (
       <NavigationContainer>
-        {!!this.props.Token ? <MainRouter /> : <AuthRouter />}
+        {!!this.props.Token ? <MainStack /> : <AuthRouter />}
       </NavigationContainer>
     );
   }
