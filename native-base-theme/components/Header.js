@@ -377,7 +377,10 @@ export default (variables /* : * */ = variable) => {
         : variables.toolbarHeight,
     elevation: 3,
     shadowColor: platformStyle === PLATFORM.MATERIAL ? '#000' : undefined,
-    shadowOffset: platformStyle === PLATFORM.MATERIAL ? { width: 0, height: 2 } : undefined,
+    shadowOffset: platformStyle === PLATFORM.MATERIAL ? {
+      width: 0,
+      height: 2
+    } : undefined,
     shadowOpacity: platformStyle === PLATFORM.MATERIAL ? 0.2 : undefined,
     shadowRadius: platformStyle === PLATFORM.MATERIAL ? 1.2 : undefined,
     top: 0,
