@@ -27,6 +27,3 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({});
 export default connect(mapStateToProps, mapDispatchToProps())(AppContainer);
 
-//  "resolutions": {
-//    "@react-native-community/cli-debugger-ui": "4.7.0"
-//  },

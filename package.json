@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "ios": "yarn env:dev && && react-native run-ios --simulator \"iPhone 8 Plus\"",
+    "ios": "yarn env:dev && react-native run-ios --simulator \"iPhone 8 Plus\"",
     "ios:staging": "yarn env:staging && && react-native run-ios --simulator \"iPhone 8 Plus\"",
     "ios:prod": "yarn env:prod && && react-native run-ios --simulator \"iPhone 8 Plus\"",
     "android": "yarn env:dev && react-native run-android",
