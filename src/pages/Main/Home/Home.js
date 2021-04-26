@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import { Button, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
 import { connect } from 'react-redux';
+import { Button, WhiteSpace, WingBlank } from '@ant-design/react-native';
+
 
 export class Home extends Component {
   render() {
@@ -17,21 +19,15 @@ export class Home extends Component {
         <Button
           onPress={() => {
             this.props.logout();
-          }}
-          title="Logout"
-        />
+          }}>Logout</Button>
         <Button
           onPress={() => {
             this.props.navigation.navigate('Settings');
-          }}
-          title="Go to Settings"
-        />
+          }}>Go to Settings</Button>
         <Button
           onPress={() => {
             this.props.navigation.navigate('HomeDetails');
-          }}
-          title="Go to Home Details"
-        />
+          }}>Go to Home Details</Button>
       </View>
     );
   }

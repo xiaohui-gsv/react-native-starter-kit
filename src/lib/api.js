@@ -1,11 +1,11 @@
 import AsyncStorage from '@react-native-community/async-storage';
 import axios from 'axios';
-import Config from '../constants/config';
+import env from '../../env.json';
 
 /**
  * Axios defaults
  */
-axios.defaults.baseURL = Config.apiBaseUrl;
+axios.defaults.baseURL = env.apiBaseUrl;
 
 // Headers
 axios.defaults.headers.common['Content-Type'] = 'application/json';
