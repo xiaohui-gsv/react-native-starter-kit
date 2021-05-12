@@ -25,13 +25,13 @@ class App extends React.Component {
     const { store, persistor } = this.props;
 
     if (loading) {
-      return <Loading/>;
+      return <Loading />;
     }
     return (
       <Root>
         <Provider store={store}>
-          <PersistGate loading={<Loading/>} persistor={persistor}>
-            <AppContainer/>
+          <PersistGate loading={<Loading />} persistor={persistor}>
+            <AppContainer />
           </PersistGate>
         </Provider>
       </Root>

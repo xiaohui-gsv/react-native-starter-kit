@@ -3,7 +3,6 @@ import { Text, View } from 'react-native';
 import { connect } from 'react-redux';
 import { Button, WhiteSpace, WingBlank } from '@ant-design/react-native';
 
-
 export class Home extends Component {
   render() {
     return (
@@ -12,22 +11,28 @@ export class Home extends Component {
           flex: 1,
           alignItems: 'center',
           justifyContent: 'center',
-        }}
-      >
+        }}>
         <Text>Home</Text>
 
         <Button
           onPress={() => {
             this.props.logout();
-          }}>Logout</Button>
+          }}>
+          Logout
+        </Button>
+
         <Button
           onPress={() => {
             this.props.navigation.navigate('Settings');
-          }}>Go to Settings</Button>
+          }}>
+          Go to Settings
+        </Button>
         <Button
           onPress={() => {
             this.props.navigation.navigate('HomeDetails');
-          }}>Go to Home Details</Button>
+          }}>
+          Go to Home Details
+        </Button>
       </View>
     );
   }
